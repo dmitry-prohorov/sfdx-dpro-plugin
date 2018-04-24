@@ -1,0 +1,5 @@
+{
+  "commandDescription": "Build 3rd party frontend apps. To specify a project folders that includes spaces, enclose it in single quotes.",
+  "directoryFlagDescription": "Directrory of frontend apps {default: ./frontend-apps}",
+  "projectsFlagDescription": "Comma separated list of project names that needs to be build"
+}
