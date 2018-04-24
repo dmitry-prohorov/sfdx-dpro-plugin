@@ -4,6 +4,7 @@ sfdx-dpro-plugin
 
 
 [![Version](https://img.shields.io/npm/v/sfdx-dpro-plugin.svg)](https://npmjs.org/package/sfdx-dpro-plugin)
+[![CircleCI](https://circleci.com/gh/dmitry-prohorov/sfdx-dpro-plugin/tree/master.svg?style=shield)](https://circleci.com/gh/dmitry-prohorov/sfdx-dpro-plugin/tree/master)
 [![Downloads/week](https://img.shields.io/npm/dw/sfdx-dpro-plugin.svg)](https://npmjs.org/package/sfdx-dpro-plugin)
 [![License](https://img.shields.io/npm/l/sfdx-dpro-plugin.svg)](https://github.com/dmitry-prohorov/sfdx-dpro-plugin/blob/master/package.json)
 
