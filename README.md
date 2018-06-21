@@ -18,7 +18,7 @@ $ npm install -g sfdx-dpro-plugin
 $ sfdx-dpro-plugin COMMAND
 running command...
 $ sfdx-dpro-plugin (-v|--version|version)
-sfdx-dpro-plugin/0.0.1 darwin-x64 node-v8.11.1
+sfdx-dpro-plugin/0.0.2 darwin-x64 node-v8.11.1
 $ sfdx-dpro-plugin --help [COMMAND]
 USAGE
   $ sfdx-dpro-plugin COMMAND
@@ -26,9 +26,10 @@ USAGE
 ```
 <!-- usagestop -->
 <!-- commands -->
-* [`sfdx-dpro-plugin dpro:projects:build [FILE]`](#sfdx-dpro-plugin-dproprojectsbuild-file)
+* [`sfdx-dpro-plugin dpro:projects:build`](#sfdx-dpro-plugin-dproprojectsbuild)
 
-## `sfdx-dpro-plugin dpro:projects:build [FILE]`
+## `sfdx-dpro-plugin dpro:projects:build`
+
 Build 3rd party frontend apps. To specify a project folders that includes spaces, enclose it in single quotes.
 
 ```
@@ -44,11 +45,10 @@ OPTIONS
 
 EXAMPLES
   $ sfdx dpro:projects:build --directory <path to projects folder> --projects <comma separated project folder names>
-
   $ sfdx dpro:projects:build -d <path to projects folder>
 ```
 
-_See code: [src/commands/dpro/projects/build.ts](https://github.com/dmitry-prohorov/sfdx-dpro-plugin/blob/v0.0.1/src/commands/dpro/projects/build.ts)_
+_See code: [src/commands/dpro/projects/build.ts](https://github.com/dmitry-prohorov/sfdx-dpro-plugin/blob/v0.0.2/src/commands/dpro/projects/build.ts)_
 <!-- commandsstop -->
 <!-- debugging-your-plugin -->
 # Debugging your plugin
