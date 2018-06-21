@@ -23,15 +23,15 @@ export function sh(options: CmdOptions): Promise<any> { // tslint:disable-line:n
       cwd: dir
     });
 
-    command.stdout.on('data', (data) => {
+    command.stdout.on('data', data => {
       out.push(data.toString());
     });
 
-    command.stderr.on('data', (data) => {
+    command.stderr.on('data', data => {
       error.push(data.toString() + '\n');
     });
 
-    command.on('exit', (code) => {
+    command.on('exit', code => {
       resolve({
         status: code,
         stdout: out.join(''),

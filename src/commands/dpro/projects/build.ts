@@ -1,7 +1,6 @@
-import { flags } from '@oclif/command';
+import { core, flags, SfdxCommand } from '@salesforce/command';
 import { join } from 'path';
-import { SfdxCommand, core } from '@salesforce/command';
-import { sh, CmdOptions } from '../../../scripts/cmd';
+import { CmdOptions, sh } from '../../../scripts/cmd';
 
 core.Messages.importMessagesDirectory(join(__dirname, '..', '..', '..', '..'));
 const messages = core.Messages.loadMessages('sfdx-dpro-plugin', 'build');
@@ -66,8 +65,8 @@ export default class Build extends SfdxCommand {
     }
 
     if (output.failDetails.length > 0) {
-      this.error(`Build was failed for next projects: ${output.failDetails.map((item) => item.project).join(',')}\
-      !\nStack:${output.failDetails.map((item) => item.stack).join('\n###############\n')}`, {exit: 1});
+      this.error(`Build was failed for next projects: ${output.failDetails.map(item => item.project).join(',')}\
+      !\nStack:${output.failDetails.map(item => item.stack).join('\n###############\n')}`, {exit: 1});
     }
 
     this.ux.log('Build was successful!');
@@ -82,16 +81,14 @@ export default class Build extends SfdxCommand {
   }
 
   private isDirectory(projectPath: string): Promise<boolean> {
-    return core.SfdxUtil.stat(projectPath)
-        .then((stats) => stats.isDirectory())
-        .catch((err) => false);
     return core.fs.stat(projectPath)
+        .then(stats => stats.isDirectory())
+        .catch(err => false);
   }
 
   private isPackageJsonExist(projectPath: string): Promise<boolean> {
-    return core.SfdxUtil.stat(join(projectPath, 'package.json'))
-        .then((stat) => stat.isFile())
-        .catch((err) => false);
     return core.fs.stat(join(projectPath, 'package.json'))
+        .then(stat => stat.isFile())
+        .catch(err => false);
   }
 }
