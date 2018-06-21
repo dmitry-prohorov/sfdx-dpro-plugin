@@ -29,7 +29,7 @@ export default class Build extends SfdxCommand {
       this.error(`Apps folder is not exists: ${directory}`);
     }
 
-    const projects: string[] = (this.flags.projects && this.flags.projects.split(',')) || await core.SfdxUtil.readdir(directory);
+    const projects: string[] = (this.flags.projects && this.flags.projects.split(',')) || await core.fs.readdir(directory);
 
     const output: any = { // tslint:disable-line:no-any
         successDetails: [],
@@ -85,11 +85,13 @@ export default class Build extends SfdxCommand {
     return core.SfdxUtil.stat(projectPath)
         .then((stats) => stats.isDirectory())
         .catch((err) => false);
+    return core.fs.stat(projectPath)
   }
 
   private isPackageJsonExist(projectPath: string): Promise<boolean> {
     return core.SfdxUtil.stat(join(projectPath, 'package.json'))
         .then((stat) => stat.isFile())
         .catch((err) => false);
+    return core.fs.stat(join(projectPath, 'package.json'))
   }
 }
